@@ -1,6 +1,6 @@
-import requests
 import random
 import string
+import allure
 
 @allure.step('Генерация строки из букв нижнего регистра, в качестве параметра - длина строки')
 def generate_random_string(length):
