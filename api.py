@@ -9,13 +9,13 @@ class Api:
     def register_new_courier_and_return_login_password(data):
         login_pass = []
         url = CONFIG.courier
-        reg_response = requests.post(url, data=data)
+        response = requests.post(url, data=data)
 
-        if reg_response.status_code == 201:
+        if response.status_code == 201:
             login_pass.append(data["login"])
             login_pass.append(data["password"])
             login_pass.append(data["firstName"])
-        return login_pass, reg_response
+        return login_pass, response
 
     @staticmethod
     @allure.step('Вход курьера в систему')

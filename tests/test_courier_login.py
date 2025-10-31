@@ -1,17 +1,20 @@
 import pytest
+import allure
 from api import Api
 from data import *
 
 class TestCourierLogin:
 
-    @allure.title('Проверка: курьера можно создать заполнив обяз.поля')
+    @allure.title('Успешная авторизация курьера при заполнении всех обязательных полей')
     def test_login_with_registered_data(self, courier):
-        login, password, _ = courier
+        login, password, expected_courier_id, _ = courier
         login_data = {"login": login, "password": password}
         login_response = Api.login_courier(login_data)
+        
         assert login_response.status_code == 200
-        assert "id" in login_response.json()
-
+        response_json = login_response.json()
+        assert "id" in response_json
+        assert response_json["id"] == expected_courier_id 
 
     @allure.title('Проверка:c некорректными данными')
     def test_login_with_incorrect_credentials(self):

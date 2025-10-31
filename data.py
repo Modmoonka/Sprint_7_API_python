@@ -1,5 +1,6 @@
 from randomaize import *
 import allure
+import string
 
 @allure.step('Получаем тело запроса для регистрации курьера')
 def courier_data():

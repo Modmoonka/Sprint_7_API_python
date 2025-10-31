@@ -9,8 +9,8 @@ class TestCreateOrder:
         ["BLACK"],
         ["GREY"],
         ["BLACK", "GREY"],
-        [],          # пустой массив — допустимо
-        None         # поле не передаётся — тоже допустимо
+        [],         
+        None         
     ])
     
     @allure.title('Создаём заказ с цветами: {color}')
