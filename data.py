@@ -37,7 +37,6 @@ def get_order_payload(color):
     "color": [color]
 }
 
-
 class ErrorText:
     class LoginErrorText:
         NON_EXISTENT_ACC_DATA_ERROR_TEXT = "Учетная запись не найдена"

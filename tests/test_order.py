@@ -1,7 +1,7 @@
 import allure
 from api import Api
 
-class TestOrderList:
+class TestOrder:
 
     @allure.title('Проверь, что в тело ответа возвращается список заказов')
     def test_get_order_list(self):
